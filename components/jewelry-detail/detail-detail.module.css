@@ -1,0 +1,21 @@
+.title {
+  font-size: 290%;
+  margin-left: -1%;
+}
+
+.other {
+  font-size: 200%;
+  margin-top: 15%;
+  display: flex;
+  place-content: space-between;
+  width: 42%;
+}
+.bold {
+  margin-left: 3%;
+  font-weight: bold;
+}
+.icon {
+  display: flex;
+  width: 2.5rem;
+  height: 2.5rem;
+}

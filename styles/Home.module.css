@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,600;1,300;1,600&display=swap");
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;
@@ -6,6 +7,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  font-family: "Zilla Slab", serif;
 }
 
 .main {
@@ -31,11 +33,6 @@
   justify-content: center;
   align-items: center;
   flex-grow: 1;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
 }
 
 .title a:hover,

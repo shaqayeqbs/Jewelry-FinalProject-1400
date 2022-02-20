@@ -1,0 +1,57 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+  width: 100%;
+  padding-bottom: 2.5%;
+  padding-top: 2.5%;
+  background-color: #f1ebe2;
+}
+
+.header h1 {
+  font-family: "Zilla Slab";
+  margin-left: 70%;
+  width: 100%;
+}
+
+.active {
+  border-bottom: 1px solid black;
+}
+h1 a.active {
+  border-bottom: 1px solid black;
+}
+.button {
+  display: block;
+  cursor: pointer;
+  border: none;
+  align-items: center;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 9%;
+}
+.container {
+  display: flex;
+  width: auto;
+  place-content: space-between;
+}
+
+.button:hover,
+.button:active,
+.button a.active {
+  color: #ead1aa;
+}
+
+.pic {
+  width: 4.3rem;
+  height: 2rem;
+  margin-top: 7%;
+  margin-right: 8%;
+}

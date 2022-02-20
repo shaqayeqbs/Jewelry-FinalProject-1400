@@ -1,0 +1,78 @@
+{"DUMMY_DATA" : [
+  {
+    "id": "e1",
+    "title": "diamond bracelet",
+    "price": "250",
+    "weight": "4.5~",
+    "type": "bracelet",
+    "image": "images/slide1.jpg"
+  },
+  {
+    "id": "e2",
+    "title": "GOld Earing",
+    "price": "140.99",
+    "weight": "2.65~",
+    "type": "earing",
+    "image": "images/slide2.jpg"
+  },
+  {
+    "id": "e3",
+    "title": "Gold Necklace",
+    "price": "500",
+    "weight": "10.1~",
+    "type": "necklace",
+    "image": "images/slide3.jpg"
+  },
+
+  {
+    "id": "e4",
+    "title": "GOld Earing",
+    "price": "120",
+    "weight": "2~",
+    "type": "earing",
+    "image": "images/slide4.jpg"
+  },
+
+  {
+    "id": "e5",
+    "title": "GOld Ring",
+    "price": "100",
+    "weight": "1.95~",
+    "type": "ring",
+    "image": "images/slide5.jpg"
+  },
+  {
+    "id": "e6",
+    "title": "GOld Earing",
+    "price": "240.59",
+    "weight": "6.5~",
+    "type": "earing",
+    "image": "images/slide6.jpg"
+  },
+  {
+    "id": "e7",
+    "title": "White GOld Ring",
+    "price": "160",
+    "weight": "1.5~",
+    "type": "ring",
+    "image": "images/slide7.jpg"
+  },
+  {
+    "id": "e8",
+    "title": "White GOld Ring",
+    "price": "300",
+    "weight": "5.5~",
+    "type": "ring",
+    "image": "images/slide8.jpg"
+  },
+  {
+    "id": "e9",
+    "title": "Gold bracelet",
+    "price": "95",
+    "weight": "1.1~",
+    "type": "bracelet",
+    "image": "images/slide9.jpg"
+  }
+]}
+
+

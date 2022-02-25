@@ -3,8 +3,7 @@ import DetailDetali from "./detail-detail";
 import JeweleryForm from "./jewelry-form";
 import Image from "next/image";
 import { useContext } from "react";
-import CartContext from "../../store/cart-context";
-import Cart from "../cart/cart";
+import CartContext from "../store/cart-context";
 
 const JDetail = (props) => {
   const cartCtx = useContext(CartContext);

@@ -1,35 +1,59 @@
 import data from "../data/dummy-data.json";
 
-export function getAllJewelry() {
-  // export async function getStaticProps() {
-  //   const filePath = path.join(process.cwd(), "data", "dummy-data.json");
-  //   const jsonData = await fs.readFile(filePath);
-  //   const jewelrys = JSON.parse(jsonData);
+export async function getAllUsers(){
+  const res =await fetch(
+    "https://finalproject-1400-default-rtdb.firebaseio.com/users.json"
+  );
+    
+  const data = await res.json();
+      const testUser = [];
 
-  
-  // const res = await fetch(
-  //   "https://finalproject-1400-default-rtdb.firebaseio.com/jewelry.json"
-  // );
-
-  const res = data.DUMMY_DATA;
-
-  // const myjewelrys = await res.json();
-  // for (const key in myjewelrys) {
-  //   jewelrys.push({
-  //     id: key,
-  //     ...myjewelrys[key],
-  //   });
-  // }
-  return res;
+      for (const key in data) {
+        testUser.push({
+          id: key,
+          key: key,
+          name: data[key].name,
+          lastname: data[key].lastname,
+          email: data[key].email,
+          password: data[key].password,
+        });
+      }
+      return testUser;
+ 
+       
 }
 
-export function getFilteredJewelry(type) {
-  const allJewerly = getAllJewelry();
+export async function getAllJewelry() {
+  const res = await fetch(
+    "https://finalproject-1400-default-rtdb.firebaseio.com/jewelry.json"
+  );
+
+  // const res = data.DUMMY_DATA;
+  const data = await res.json();
+  const testjewelerys = [];
+
+  for (const key in data) {
+    console.log(key);
+    testjewelerys.push({
+      id: key,
+      key: key,
+      price: data[key].price,
+      title: data[key].title,
+      image: data[key].image,
+      weight: data[key].weight,
+      type: data[key].type,
+    });
+  }
+  return testjewelerys;
+}
+
+export async function getFilteredJewelry(type) {
+  const allJewerly = await getAllJewelry();
 
   return allJewerly.filter((jewelry) => jewelry.type === type);
 }
 
-export function getJewelryById(id) {
-  const allJewerly = getAllJewelry();
+export async function getJewelryById(id) {
+  const allJewerly = await getAllJewelry();
   return allJewerly.find((jewelry) => jewelry.id === id);
 }

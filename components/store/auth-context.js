@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from "react";
 
 let logoutTimer;
 
 const AuthContext = React.createContext({
-  token: '',
+  token: "",
   isLoggedIn: false,
+  email: "",
   login: (token) => {},
   logout: () => {},
 });
@@ -19,49 +20,67 @@ const calculateRemainingTime = (expirationTime) => {
 };
 
 const retrieveStoredToken = () => {
-  const storedToken = localStorage.getItem('token');
-  const storedExpirationDate = localStorage.getItem('expirationTime');
+  if (typeof window !== "undefined") {
+    const storedToken = localStorage.getItem("token");
+    const storedEmail = localStorage.getItem("email");
 
-  const remainingTime = calculateRemainingTime(storedExpirationDate);
+    const storedExpirationDate = localStorage.getItem("expirationTime");
 
-  if (remainingTime <= 3600) {
-    localStorage.removeItem('token');
-    localStorage.removeItem('expirationTime');
-    return null;
+    const remainingTime = calculateRemainingTime(storedExpirationDate);
+
+    if (remainingTime <= 3600) {
+      localStorage.removeItem("token");
+      localStorage.removeItem("email");
+      localStorage.removeItem("expirationTime");
+      return null;
+    }
+
+    return {
+      email: storedEmail,
+      token: storedToken,
+      duration: remainingTime,
+    };
+  } else {
+    console.log("this is not on the winodws side");
   }
-
-  return {
-    token: storedToken,
-    duration: remainingTime,
-  };
 };
 
 export const AuthContextProvider = (props) => {
   const tokenData = retrieveStoredToken();
-  
+
   let initialToken;
+  let initialEmail;
   if (tokenData) {
     initialToken = tokenData.token;
+    initialEmail = tokenData.email;
   }
 
   const [token, setToken] = useState(initialToken);
+  const [email, setEmail] = useState(initialEmail);
 
   const userIsLoggedIn = !!token;
 
   const logoutHandler = useCallback(() => {
     setToken(null);
-    localStorage.removeItem('token');
-    localStorage.removeItem('expirationTime');
+    setEmail(null);
+
+    localStorage.removeItem("token");
+    localStorage.removeItem("email");
+
+    localStorage.removeItem("expirationTime");
 
     if (logoutTimer) {
       clearTimeout(logoutTimer);
     }
   }, []);
 
-  const loginHandler = (token, expirationTime) => {
+  const loginHandler = (token, expirationTime, email) => {
     setToken(token);
-    localStorage.setItem('token', token);
-    localStorage.setItem('expirationTime', expirationTime);
+    setEmail(email);
+    localStorage.setItem("token", token);
+    localStorage.setItem("email", email);
+
+    localStorage.setItem("expirationTime", expirationTime);
 
     const remainingTime = calculateRemainingTime(expirationTime);
 
@@ -70,7 +89,6 @@ export const AuthContextProvider = (props) => {
 
   useEffect(() => {
     if (tokenData) {
-      console.log(tokenData.duration);
       logoutTimer = setTimeout(logoutHandler, tokenData.duration);
     }
   }, [tokenData, logoutHandler]);
@@ -78,6 +96,7 @@ export const AuthContextProvider = (props) => {
   const contextValue = {
     token: token,
     isLoggedIn: userIsLoggedIn,
+    email: email,
     login: loginHandler,
     logout: logoutHandler,
   };

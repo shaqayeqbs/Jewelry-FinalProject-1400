@@ -10,7 +10,7 @@ const FilteredButton = (props) => {
       <Link href="/ring">
         <a className={classes.filter}>Rings</a>
       </Link>
-      <Link href="/necklaces">
+      <Link href="/necklace">
         <a className={classes.filter}> Necklaces</a>
       </Link>
       <Link href="/bracelet">

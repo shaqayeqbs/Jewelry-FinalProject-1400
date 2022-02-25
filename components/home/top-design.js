@@ -13,7 +13,7 @@ const TopDesign = () => {
           alt="this is left background"
           src="/images/BackgroundL.jpg"
           width={400}
-          height={400}
+          height={570}
         />
 
         <div className="float-start">
@@ -24,9 +24,13 @@ const TopDesign = () => {
             sips, sounds, and stories that celebrate
             <br /> feminine viality
           </p>
-          <Link href="/jewelerys" className={classes.mylink}>
-            See All
+          <div>
+          <Link href="/jewelry">
+            <a  className={classes.seeAll}> See All</a>
+           
           </Link>
+          </div>
+
         </div>
       </div>
     </section>

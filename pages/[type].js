@@ -32,6 +32,7 @@ export async function getStaticProps(context) {
   const { params } = context;
   const type = params.type;
 
+  
   const jewelry = await getFilteredJewelry(type);
 
   if (!jewelry || jewelry.lenght === 0) {

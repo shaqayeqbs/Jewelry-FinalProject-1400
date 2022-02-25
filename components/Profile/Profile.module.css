@@ -1,0 +1,44 @@
+.container {
+  margin: 3rem auto;
+  width: 95%;
+  max-width: 45rem;
+  border-radius: 6px;
+  background-color: black;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  text-align: center;
+}
+.section h1 {
+  border-bottom: 2px solid rgb(180, 180, 180);
+  padding-bottom: 5%;
+  text-align: center;
+  color: #f3e2c5;
+}
+
+.title {
+  padding: 2%;
+  display: block;
+  color: #f3e2c5;
+  text-align: left;
+  font-weight: bold;
+}
+
+.label {
+  display: block;
+  font-weight: bold;
+  font: inherit;
+  border-radius: 4px;
+
+  width: 100%;
+  text-align: left;
+  padding: 0.25rem;
+
+  margin: 0.5rem 0;
+}
+
+.data {
+  border: 2px solid #ead1aa;
+  padding: 2%;
+  margin-top: 4%;
+  color: white;
+}

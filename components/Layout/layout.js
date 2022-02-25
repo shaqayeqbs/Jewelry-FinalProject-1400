@@ -3,7 +3,7 @@ import classes from "./layout.module.css";
 import React from "react";
 import Cart from "../cart/cart";
 import { useState } from "react";
-import CartProvider from "../../store/CartProvider";
+import CartProvider from "../store/CartProvider";
 import Footer from "../Footer/Footer";
 
 const Layout = (props) => {

@@ -9,13 +9,10 @@
   align-items: center;
   border-radius: 25px;
   font-weight: bold;
-  margin: 5% 1rem 5% 2rem;
+  margin: 5% 1rem 5% -1rem;
 }
 
-.button:hover,
-.button:active {
-  background-color: #f3e2c5;
-}
+
 
 .icon {
   width: 2.5rem;
@@ -42,10 +39,31 @@
   overflow: hidden;
   white-space: nowrap;
 }
+@media screen and (max-width: 992px) {
+  .button {
+    background-color: transparent;
+    margin: 5% 0rem 5% -1rem;
+  }
+  .title {
+    display: none;
+  }
+  .icon {
+    width: 2.3rem;
+    margin-right: -1.7rem;
+    z-index: 99;
+  }
+  .badge {
+    padding: 0.25rem 1rem;
+    border-radius: 25px;
+    margin-top: -1rem;
+   
+  }
+}
 
 .bump {
   animation: bump 300ms ease-out;
 }
+
 
 @keyframes bump {
   0% {

@@ -18,7 +18,7 @@ const AddJewelry = () => {
         },
       }
     ).then(() => {
-      history.replace("/");
+      history.replace("/jewlery");
     });
   }
 
@@ -30,3 +30,4 @@ const AddJewelry = () => {
 };
 
 export default AddJewelry;
+

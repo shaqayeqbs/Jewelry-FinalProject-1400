@@ -3,11 +3,14 @@ import DetailDetali from "./detail-detail";
 import JeweleryForm from "./jewelry-form";
 import Image from "next/image";
 import { useContext } from "react";
+import AuthProvider from "../store/auth-context";
 import CartContext from "../store/cart-context";
 
 const JDetail = (props) => {
   const cartCtx = useContext(CartContext);
+  const authCtx = useContext(AuthProvider);
 
+  const isLoggedIn = authCtx.isLoggedIn;
   const { item } = props;
   const addToCartHandler = (amount) => {
     cartCtx.addItem({
@@ -34,11 +37,13 @@ const JDetail = (props) => {
           price={item.price}
         />
         <div className={classes.formContainer}>
-          <JeweleryForm
-            jewelry={item}
-            id={item.id}
-            onAddToCart={addToCartHandler}
-          />
+          {isLoggedIn && (
+            <JeweleryForm
+              jewelry={item}
+              id={item.id}
+              onAddToCart={addToCartHandler}
+            />
+          )}
         </div>
       </div>
     </div>

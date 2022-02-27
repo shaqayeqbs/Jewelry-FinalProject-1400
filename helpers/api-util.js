@@ -1,4 +1,4 @@
-import data from "../data/dummy-data.json";
+
 
 export async function getAllUsers(){
   const res =await fetch(

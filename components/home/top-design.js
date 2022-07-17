@@ -16,7 +16,7 @@ const TopDesign = () => {
           height={570}
         />
 
-        <div className="float-start">
+        <div className="floatstart">
           <h2>Original Stroy</h2>
           <p>
             Sink into our selections for simulating

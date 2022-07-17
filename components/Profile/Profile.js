@@ -3,7 +3,7 @@ import classes from "./Profile.module.css";
 import AuthContext from "../store/auth-context";
 
 const Profile = (props) => {
-  console.log(props.myuser);
+
 
   const authCtx = useContext(AuthContext);
   const isLoggedIn = authCtx.isLoggedIn;

@@ -1,29 +1,26 @@
-
-
-export async function getAllUsers(){
-  const res =await fetch(
+export async function getAllUsers() {
+  const res = await fetch(
     "https://finalproject-1400-default-rtdb.firebaseio.com/users.json"
   );
-    
-  const data = await res.json();
-      const testUser = [];
 
-      for (const key in data) {
-        testUser.push({
-          id: key,
-          key: key,
-          name: data[key].name,
-          lastname: data[key].lastname,
-          email: data[key].email,
-          password: data[key].password,
-        });
-      }
-      return testUser;
- 
-       
+  const data = await res.json();
+  const testUser = [];
+
+  for (const key in data) {
+    testUser.push({
+      id: key,
+      key: key,
+      name: data[key].name,
+      lastname: data[key].lastname,
+      email: data[key].email,
+      password: data[key].password,
+    });
+  }
+  return testUser;
 }
 
 export async function getAllJewelry() {
+
   const res = await fetch(
     "https://finalproject-1400-default-rtdb.firebaseio.com/jewelry.json"
   );
@@ -33,7 +30,7 @@ export async function getAllJewelry() {
   const testjewelerys = [];
 
   for (const key in data) {
-    console.log(key);
+
     testjewelerys.push({
       id: key,
       key: key,
@@ -44,6 +41,7 @@ export async function getAllJewelry() {
       type: data[key].type,
     });
   }
+
   return testjewelerys;
 }
 

@@ -4,9 +4,9 @@ const AddJewelry = () => {
   const history = useRouter();
 
   function addJeweleryHandler(jeweleryData) {
-    console.log(jeweleryData, "jdata");
+ 
     const { data } = jeweleryData;
-    console.log(data, "data");
+
     fetch(
       "https://finalproject-1400-default-rtdb.firebaseio.com/jewelry.json",
       {

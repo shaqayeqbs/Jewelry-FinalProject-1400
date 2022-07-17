@@ -10,7 +10,7 @@ const MainNavigation = (props) => {
   const [isAdmin, setIsAdmin] = useState(false);
   const authCtx = useContext(AuthContext);
   const isLoggedIn = authCtx.isLoggedIn;
-  console.log(isLoggedIn);
+
   const email = authCtx.email;
 
   useEffect(() => {

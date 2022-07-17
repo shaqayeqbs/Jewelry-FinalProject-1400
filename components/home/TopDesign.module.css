@@ -28,7 +28,7 @@
   padding-top: 7%;
 }
 .lgg h2 {
-  margin: 6rem 0 4rem 12rem;
+  margin: 6rem 0 4rem 4rem;
   font-family: "Zilla Slab", serif;
   font-weight: 600;
   font-size: 45px;
@@ -36,7 +36,7 @@
 .lgg p {
   border-left: 6px solid black;
   height: 130px;
-  margin-left: 12rem;
+  margin-left:4rem;
   padding-left: 2rem;
   font-size: 27px;
   margin-bottom: 4.6rem;
@@ -44,7 +44,7 @@
 }
 
 .seeAll {
-  margin-left: 12rem;
+  margin-left: 4rem;
   color: black;
   text-decoration: none;
   border: 2px solid rgb(150, 149, 149);

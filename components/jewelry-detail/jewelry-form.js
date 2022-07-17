@@ -10,7 +10,7 @@ const JeweleryForm = (props) => {
     const enteredAmount = amountInputRef.current.value;
     const enteredAmountNumber = +enteredAmount;
 
-    console.log(enteredAmountNumber, "entered amount");
+
  
     props.onAddToCart(enteredAmountNumber);
   };

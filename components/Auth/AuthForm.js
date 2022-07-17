@@ -64,7 +64,7 @@ const AuthForm = (props) => {
             new Date().getTime() + +data.expiresIn * 1000
           );
           authCtx.login(data.idToken, expirationTime.toISOString(),data.email);
-          console.log(data.email, "lets see thisssssss");
+      
           router.push("/");
         })
         .catch((err) => {
